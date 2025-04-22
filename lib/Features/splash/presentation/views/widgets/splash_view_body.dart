@@ -4,7 +4,6 @@ import 'package:bookly/constants.dart';
 import 'package:bookly/core/utils/assets.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class SplashViewBody extends StatefulWidget {
   const SplashViewBody({super.key});
@@ -21,10 +20,9 @@ class _SplashViewBodyState extends State<SplashViewBody>
   @override
   void initState() {
     super.initState();
+    initSlidingAnimation();
     navigateToHome();
   }
-
-  
 
   @override
   void dispose() {
@@ -61,7 +59,6 @@ class _SplashViewBodyState extends State<SplashViewBody>
   }
 
   void navigateToHome() {
-      initSlidingAnimation();
     Future.delayed(const Duration(seconds: 2), () {
       Get.to(
         () => const HomeView(),
